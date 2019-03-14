@@ -1,9 +1,11 @@
 let password = 'Isncyfpz7gnD';
 
 let text = `
-Hello Andy,
+Hello Me,
 
     This is an automated email test.
+
+    Sent from my λ
 
 Thanks,
 RobotMax
@@ -11,11 +13,11 @@ RobotMax
 
 let from = 'maxwell.clarke@intranel.com';
 
-let to = 'andrew@intranel.com';
+let to = 'maxwell.clarke@intranel.com';
 
 let nodemailer = require('nodemailer');
 
-async function main() {
+exports.handler = function (event, context, callback) {
     let transport = nodemailer.createTransport({
         host: 'smtp.zoho.com',
         port: '587',
@@ -33,8 +35,12 @@ async function main() {
         text,
     };
 
-    console.dir(await transport.sendMail(mailOptions));
-
+    transport.sendMail(mailOptions).then(() => {
+        callback(null, {
+            statusCode: 200,
+            body: JSON.stringify({
+                success: true,
+            }),
+        });
+    });
 };
-
-main().catch(console.error);
