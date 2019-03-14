@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 let password = 'Isncyfpz7gnD';
 
 let text = `
@@ -14,8 +16,6 @@ RobotMax
 let from = 'maxwell.clarke@intranel.com';
 
 let to = 'maxwell.clarke@intranel.com';
-
-let nodemailer = require('nodemailer');
 
 exports.handler = function (event, context, callback) {
     let transport = nodemailer.createTransport({

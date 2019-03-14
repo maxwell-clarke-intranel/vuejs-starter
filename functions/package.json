@@ -1,11 +1,7 @@
 {
   "name": "functions",
-  "version": "1.0.0",
-  "description": "Send email via Zoho",
-  "main": "mail.js",
+  "description": "functions",
   "dependencies": {
     "nodemailer": "^5.1.1"
-  },
-  "author": "",
-  "license": "SEE LICENSE IN LICENSE.txt"
+  }
 }
