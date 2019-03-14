@@ -1,5 +1,5 @@
 {
-  "name": "emailclient",
+  "name": "functions",
   "version": "1.0.0",
   "description": "Send email via Zoho",
   "main": "mail.js",
